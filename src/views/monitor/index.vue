@@ -1,107 +1,51 @@
 <template>
   <div style="margin:20px">
+    <!-- gutter属性设置分栏间隔 -->
     <el-row :gutter="20">
-      <el-col :span="8">
+      <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span>设备1</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
+            <span>设备1-主轴电机-前轴承</span>
+            <el-button style="float: right; padding: 3px 0" type="text">智能诊断</el-button>
           </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
+          <status_1_F_A></status_1_F_A>
+          <status_1_F_B></status_1_F_B>
+          <status_1_F_C></status_1_F_C>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span>设备2</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
+            <span>设备1-主轴电机-后轴承</span>
+            <el-button style="float: right; padding: 3px 0" type="text">智能诊断</el-button>
           </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>设备3</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
+          <status_1_E_A></status_1_E_A>
+          <status_1_E_B></status_1_E_B>
+          <status_1_E_C></status_1_E_C>
         </el-card>
       </el-col>
     </el-row>
     <el-row :gutter="20">
-      <el-col :span="8">
+      <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span>设备4</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
+            <span>设备2-主轴电机-前轴承</span>
+            <el-button style="float: right; padding: 3px 0" type="text">智能诊断</el-button>
           </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
+          <status_2_F_A></status_2_F_A>
+          <status_2_F_B></status_2_F_B>
+          <status_2_F_C></status_2_F_C>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="12">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-            <span>设备5</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
+            <span>设备2-主轴电机-后轴承</span>
+            <el-button style="float: right; padding: 3px 0" type="text">智能诊断</el-button>
           </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>设备6</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-    <el-row :gutter="20">
-      <el-col :span="8">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>设备7</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>设备8</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>设备9</span>
-            <el-button style="float: right; padding: 3px 0" type="text">删除</el-button>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ username }}
-          </div>
+          <status_2_E_A></status_2_E_A>
+          <status_2_E_B></status_2_E_B>
+          <status_2_E_C></status_2_E_C>
         </el-card>
       </el-col>
     </el-row>
@@ -109,12 +53,38 @@
 </template>
 
 <script>
+import status_1_F_A from './status_1_F_A.vue'
+import status_1_F_B from './status_1_F_B.vue'
+import status_1_F_C from './status_1_F_C.vue'
+import status_1_E_A from './status_1_E_A.vue'
+import status_1_E_B from './status_1_E_B.vue'
+import status_1_E_C from './status_1_E_C.vue'
+import status_2_F_A from './status_2_F_A.vue'
+import status_2_F_B from './status_2_F_B.vue'
+import status_2_F_C from './status_2_F_C.vue'
+import status_2_E_A from './status_2_E_A.vue'
+import status_2_E_B from './status_2_E_B.vue'
+import status_2_E_C from './status_2_E_C.vue'
 export default {
   name: "showinfo",
   data() {
     return {
       username: "admin",
-    }
+    };
+  },
+  components: {
+    status_1_F_A,
+    status_1_F_B,
+    status_1_F_C,
+    status_1_E_A,
+    status_1_E_B,
+    status_1_E_C,
+    status_2_F_A,
+    status_2_F_B,
+    status_2_F_C,
+    status_2_E_A,
+    status_2_E_B,
+    status_2_E_C,
   }
 }
 </script>
@@ -122,10 +92,6 @@ export default {
 .el-row {
   margin-top: 20px;
   margin-bottom: 20px;
-/* 
-  &:last-child {
-    margin-bottom: 0;
-  } */
 }
 
 .el-col {
@@ -150,7 +116,7 @@ export default {
 }
 
 .row-bg {
-  padding: 10px 0;
+  padding: 5px 0;
   background-color: #f9fafc;
 }
 
@@ -176,3 +142,4 @@ export default {
     width: 480px;
   } */
 </style>
+
